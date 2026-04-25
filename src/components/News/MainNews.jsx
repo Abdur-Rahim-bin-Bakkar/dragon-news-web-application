@@ -4,7 +4,7 @@ import NewsCard from './NewsCard';
 const MainNews = async ({ params }) => {
     
     const category = await params;
-    const res = await fetch(`https://openapi.programming-hero.com/api/news/category/${category.category}`)
+    const res = await fetch(`https://openapi.programming-hero.com/api/news/category/${category.category}`,{cache:"no-store"})
     const data = await res.json()
     const news = data.data
     console.log(news)

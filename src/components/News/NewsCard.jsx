@@ -1,14 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 import React from 'react';
 import { FaEye, FaLink, FaStar } from 'react-icons/fa';
 import { MdSaveAlt } from 'react-icons/md';
 
 const NewsCard = ({ news }) => {
     console.log(news)
+    // const handelRout = ()=> redirect(`/details/${news._id
+    //         }`)
     return (
-        <Link href={`/details/${news._id
-            }`}>
+        <div >
             <div className='card border border-[#F3F3F3] mb-10'>
                 <div className="bg-[#F3F3F3] flex justify-between p-2 mb-2 items-center px-4">
                     <div className="flex gap-3 items-center">
@@ -30,7 +32,7 @@ const NewsCard = ({ news }) => {
                     <Image src={news.image_url} alt='news image' width={400} height={300} className='w-full my-4' />
 
                     <p className='text-[#706F6F] line-clamp-4'>{news.details}</p>
-                    <Link href={'/'} className='text-[#FF8C47] font-bold'>Read More</Link>
+                    <Link href={`/details/${news._id}`} className='text-[#FF8C47] font-bold'>Read More</Link>
                 </div>
 
                 <div className=" border-t border-[#E7E7E7]     flex justify-between  py-4 px-3 mx-5">
@@ -48,7 +50,7 @@ const NewsCard = ({ news }) => {
                     </div>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 };
 

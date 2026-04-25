@@ -7,14 +7,14 @@ import { FaArrowLeftLong } from 'react-icons/fa6';
 const page = async ({ params }) => {
     const { id } = await params
     console.log(id)
-    const res = await fetch(`https://openapi.programming-hero.com/api/news/${id}`)
+    const res = await fetch(`https://openapi.programming-hero.com/api/news/${id}`, {cache:"no-store"})
     const data = await res.json()
     const news = data.data[0]
     console.log(news)
     return (
         <div className="max-w-11/12 mx-auto">
             <h1 className='font-bold text-2xl'>Dragon News</h1>
-            <div className=' md:grid grid-cols-4'>
+            <div className=' md:grid grid-cols-4 gap-4'>
                 <div className="col-span-3  mb-10 border border-[#ffffff40]">
                     <Image src={news.image_url} alt='news image' width={400} height={300} className='w-full my-5' />
 
