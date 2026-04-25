@@ -6,7 +6,6 @@ import React from 'react';
 
 const ActLink = ({children,path}) => {
     const CurrentPath = usePathname()
-    console.log(CurrentPath)
     return <Link className={`${path === CurrentPath && 'border-b pb-1 border-success text-success text-lg duration-700'}`} href={path}>{children}</Link>
 };
 
