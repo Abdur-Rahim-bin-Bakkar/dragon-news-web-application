@@ -6,7 +6,7 @@ import BrakingNews from './BrakingNews';
 
 const Header = () => {
     return (
-        <div className='py-10 text-center'>
+        <div className='pt-10 text-center'>
             <Image src={logo} alt='header logo' width={300} height={200} className='max-w-80 mx-auto'/>
             <p className='mt-5 mb-3 text-[#706F6F]'>Journalism Without Fear or Favour</p>
             <p className='text-[#706F6F]'>{format(new Date(),'EEEE, MMM dd, yyyy')}</p>
