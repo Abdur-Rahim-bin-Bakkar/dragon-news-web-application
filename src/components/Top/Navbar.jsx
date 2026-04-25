@@ -2,12 +2,13 @@ import Link from 'next/link';
 import React from 'react';
 import user from '@/assets/user.png'
 import Image from 'next/image';
+import ActLink from './ActLink';
 
 const Navbar = () => {
     const links = <>
-        <Link href={'/'}>Home</Link>
-        <Link href={'/'}>About</Link>
-        <Link href={'/'}>Career</Link>
+        <ActLink path={'/'}>Home</ActLink>
+        <ActLink path={'/about'}>About</ActLink>
+        <ActLink path={'/career'}>Career</ActLink>
     </>
     return (
         <div>
@@ -26,7 +27,7 @@ const Navbar = () => {
 
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 gap-3 text-[#706F6F] text-lg">
+                    <ul className="menu menu-horizontal px-1 gap-6 text-[#706F6F] text-lg">
                         {links}
                     </ul>
                 </div>
