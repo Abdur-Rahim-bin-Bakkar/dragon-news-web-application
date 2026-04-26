@@ -7,7 +7,7 @@ const CategoryBtns = async ({ params }) => {
     const categorys = await res.json()
     const links = await categorys.data.news_category
     return (
-        <div className='flex flex-col gap-2  mt-3 '>
+        <div className='flex  md:flex-col flex-wrap gap-5  mt-3 '>
             {
                 links.map(link => <Link className={`cursor-pointer ${Number(category) === Number(link.category_id) && 'btn'}`} href={`/news/${link.category_id}`} key={link.category_id} >{link.category_name}</Link>)
             }
