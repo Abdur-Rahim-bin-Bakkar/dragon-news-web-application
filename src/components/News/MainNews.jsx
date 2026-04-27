@@ -7,7 +7,7 @@ const MainNews = async ({ params }) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/news/category/${category.category}`,{cache:"no-store"})
     const data = await res.json()
     const news = data.data
-    console.log(news)
+    // console.log(news)
     return (
         <div>
             {

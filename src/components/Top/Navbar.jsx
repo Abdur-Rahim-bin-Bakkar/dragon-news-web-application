@@ -1,15 +1,27 @@
+'use client'
 import Link from 'next/link';
 import React from 'react';
 import user from '@/assets/user.png'
 import Image from 'next/image';
 import ActLink from './ActLink';
+import { authClient } from '@/lib/auth-client';
 
 const Navbar = () => {
+    const {
+        data: session,
+        isPending, //loading state
+        error, //error object
+        refetch //refetch the session
+    } = authClient.useSession()
+    // console.log(session.user.name)
     const links = <>
         <ActLink path={'/'}>Home</ActLink>
         <ActLink path={'/about'}>About</ActLink>
         <ActLink path={'/career'}>Career</ActLink>
     </>
+    const handleLogout = async () => {
+        await authClient.signOut();
+    }
     return (
         <div>
             <div className="navbar mt-3  max-w-11/12 mx-auto">
@@ -32,8 +44,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-2">
+                    <p>{isPending?  'loading...': session?.user?.name}</p>
                     <Image className='w-10' src={user} alt='user logo'></Image>
                     <Link href={'/login'} className="btn bg-[#403F3F] text-white font-bold">Login</Link>
+                    <button onClick={handleLogout} className='btn'>logout</button>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ import { FaEye, FaLink, FaStar } from 'react-icons/fa';
 import { MdSaveAlt } from 'react-icons/md';
 
 const NewsCard = ({ news }) => {
-    console.log(news)
+    // console.log(news)
     // const handelRout = ()=> redirect(`/details/${news._id
     //         }`)
     return (
