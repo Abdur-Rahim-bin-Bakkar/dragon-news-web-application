@@ -13,7 +13,7 @@ const Navbar = () => {
         error, //error object
         refetch //refetch the session
     } = authClient.useSession()
-    // console.log(session.user.name)
+    // console.log(session.user)
     const links = <>
         <ActLink path={'/'}>Home</ActLink>
         <ActLink path={'/about'}>About</ActLink>
